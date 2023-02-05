@@ -6,21 +6,21 @@ This plugin is inspired by the official [@sanity/table](https://github.com/sanit
 
 ## Installation
 
-```
-npm install --save sanity-plugin-portable-table
+```bash
+$ npm install --save sanity-plugin-portable-table
 ```
 
 or
 
-```
-yarn add sanity-plugin-portable-table
+```bash
+$ yarn add sanity-plugin-portable-table
 ```
 
 ## Usage
 
 Add it as a plugin in sanity.config.ts (or .js):
 
-```
+```typescript
  import {defineConfig} from 'sanity'
  import {portableTable} from 'sanity-plugin-portable-table'
 
