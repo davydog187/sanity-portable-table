@@ -77,7 +77,8 @@
   },
   "sanityPlugin": {
     "verifyPackage": {
-      "scripts": false
+      "scripts": false,
+      "tsconfig": false
     }
   }
 }

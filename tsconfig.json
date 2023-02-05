@@ -19,7 +19,6 @@
     "isolatedModules": true,
     "checkJs": false,
     "rootDir": "src",
-    "emitDeclarationOnly": true,
     "rootDir": "."
   },
   "include": ["src/**/*"]
