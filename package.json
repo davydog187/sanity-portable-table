@@ -2,9 +2,16 @@
   "name": "sanity-plugin-portable-table",
   "version": "1.0.0",
   "description": "A table plugin for Sanity that supports PortableText cells",
-  "author": "Dave Lucia <dave@bitfo.com>",
+  "homepage": "https://github.com/bitfo/sanity-portable-table#readme",
+  "bugs": {
+    "url": "https://github.com/bitfo/sanity-portable-table/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bitfo/sanity-portable-table.git"
+  },
   "license": "Apache-2.0",
-  "source": "./src/index.ts",
+  "author": "Dave Lucia <dave@bitfo.com>",
   "exports": {
     ".": {
       "types": "./lib/src/index.d.ts",
@@ -17,24 +24,25 @@
   },
   "main": "./lib/index.js",
   "module": "./lib/index.esm.js",
+  "source": "./src/index.ts",
   "types": "./lib/src/index.d.ts",
-  "files": ["src", "lib", "v2-incompatible.js", "sanity.json"],
-  "engines": {
-    "node": ">=14"
-  },
+  "files": [
+    "src",
+    "lib",
+    "v2-incompatible.js",
+    "sanity.json"
+  ],
   "scripts": {
-    "clean": "rimraf lib",
-    "lint": "eslint .",
     "prebuild": "npm run clean && plugin-kit verify-package --silent && pkg-utils",
     "build": "pkg-utils build",
-    "watch": "pkg-utils watch",
+    "clean": "rimraf lib",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
     "link-watch": "plugin-kit link-watch",
+    "lint": "eslint .",
     "prepublishOnly": "npm run build",
-    "typecheck": "tsc --pretty --noEmit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/bitfo/sanity-portable-table.git"
+    "typecheck": "tsc --pretty --noEmit",
+    "watch": "pkg-utils watch"
   },
   "dependencies": {
     "@portabletext/toolkit": "^2.0.1",
@@ -64,8 +72,7 @@
     "react": "^18",
     "sanity": "dev-preview || 3.0.0-rc.2"
   },
-  "bugs": {
-    "url": "https://github.com/bitfo/sanity-portable-table/issues"
-  },
-  "homepage": "https://github.com/bitfo/sanity-portable-table#readme"
+  "engines": {
+    "node": ">=14"
+  }
 }
