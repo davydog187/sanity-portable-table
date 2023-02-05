@@ -25,7 +25,7 @@ Add it as a plugin in sanity.config.ts (or .js):
  import {portableTable} from '@bitfo/sanity-plugin-portable-table'
 
  export const defineConfig({
-     /...
+     ...
      plugins: [
          portableTable({
             cellSchema: {
