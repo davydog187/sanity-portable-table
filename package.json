@@ -1,7 +1,11 @@
 {
-  "name": "sanity-plugin-portable-table",
+  "name": "@bitfo/sanity-plugin-portable-table",
   "version": "1.0.0",
   "description": "A table plugin for Sanity that supports PortableText cells",
+  "keywords": [
+    "sanity",
+    "table"
+  ],
   "homepage": "https://github.com/bitfo/sanity-portable-table#readme",
   "bugs": {
     "url": "https://github.com/bitfo/sanity-portable-table/issues"
@@ -26,6 +30,9 @@
   "module": "./lib/index.esm.js",
   "source": "./src/index.ts",
   "types": "./lib/src/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
   "files": [
     "src",
     "lib",

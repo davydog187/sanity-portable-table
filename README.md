@@ -7,13 +7,13 @@ This plugin is inspired by the official [@sanity/table](https://github.com/sanit
 ## Installation
 
 ```bash
-$ npm install --save sanity-plugin-portable-table
+$ npm install --save @bitfo/sanity-plugin-portable-table
 ```
 
 or
 
 ```bash
-$ yarn add sanity-plugin-portable-table
+$ yarn add @bitfo/sanity-plugin-portable-table
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ Add it as a plugin in sanity.config.ts (or .js):
 
 ```typescript
  import {defineConfig} from 'sanity'
- import {portableTable} from 'sanity-plugin-portable-table'
+ import {portableTable} from '@bitfo/sanity-plugin-portable-table'
 
  export const defineConfig({
      /...
