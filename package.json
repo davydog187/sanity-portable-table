@@ -26,12 +26,7 @@
   "module": "./lib/index.esm.js",
   "source": "./src/index.ts",
   "types": "./lib/src/index.d.ts",
-  "files": [
-    "src",
-    "lib",
-    "v2-incompatible.js",
-    "sanity.json"
-  ],
+  "files": ["src", "lib", "v2-incompatible.js", "sanity.json"],
   "scripts": {
     "prebuild": "npm run clean && plugin-kit verify-package --silent && pkg-utils",
     "build": "pkg-utils build",
@@ -74,5 +69,10 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "sanityPlugin": {
+    "verifyPackage": {
+      "scripts": false
+    }
   }
 }
