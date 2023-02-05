@@ -1,28 +1,99 @@
+import {toPlainText} from '@portabletext/toolkit'
 import {definePlugin} from 'sanity'
 
-interface MyPluginConfig {
-  /* nothing here yet */
-}
+import type {TableConfig, Cell} from './types'
+import {createTableInput, TablePreview} from './components'
 
-/**
- * ## Usage in sanity.config.ts (or .js)
- *
- * ```
- * import {defineConfig} from 'sanity'
- * import {myPlugin} from 'sanity-plugin-portable-table'
- *
- * export const defineConfig({
- *     /...
- *     plugins: [
- *         myPlugin()
- *     ]
- * })
- * ```
- */
-export const myPlugin = definePlugin<MyPluginConfig | void>((config = {}) => {
-  // eslint-disable-next-line no-console
-  console.log('hello from sanity-plugin-portable-table')
+export * from './types'
+
+export const portableTable = definePlugin<TableConfig>((schema) => {
+  const portableTextSchema = schema.cellSchema
+
+  const WrappedTableInput = createTableInput(portableTextSchema)
+
   return {
-    name: 'sanity-plugin-portable-table',
+    name: 'portable-table',
+    schema: {
+      types: [
+        {
+          name: 'table-cell-body',
+          type: 'array',
+          of: [portableTextSchema],
+        },
+        {
+          name: 'table-cell',
+          type: 'object',
+          preview: {
+            select: {
+              text: 'text',
+            },
+            prepare({text}) {
+              return {title: toPlainText(text ?? [])}
+            },
+          },
+          fields: [
+            {
+              name: 'text',
+              type: 'table-cell-body',
+            },
+          ],
+        },
+        {
+          name: 'table-row',
+          type: 'object',
+          preview: {
+            select: {
+              cells: 'cells',
+            },
+            prepare({cells = []}: {cells: Cell[]}) {
+              return {title: cells.map((cell) => toPlainText(cell.text ?? [])).join(', ')}
+            },
+          },
+          fields: [
+            {
+              name: 'cells',
+              type: 'array',
+              of: [
+                {
+                  type: 'table-cell',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'table',
+          title: 'Dave Table',
+          type: 'object',
+          components: {
+            preview: TablePreview,
+            input: WrappedTableInput,
+          },
+          preview: {
+            select: {
+              rows: 'rows',
+            },
+            prepare({rows = []}) {
+              return {rows}
+            },
+          },
+          fields: [
+            {
+              name: 'num_cols',
+              type: 'number',
+              validation: (Rule) => Rule.required().min(1),
+              initialValue: 3,
+            },
+            {
+              name: 'rows',
+              type: 'array',
+              // TODO add a validation for column count
+              of: [{type: 'table-row'}],
+              initialValue: [],
+            },
+          ],
+        },
+      ],
+    },
   }
 })
