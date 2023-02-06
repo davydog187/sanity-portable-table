@@ -21,23 +21,26 @@ $ yarn add @bitfo/sanity-plugin-portable-table
 Add it as a plugin in sanity.config.ts (or .js):
 
 ```typescript
- import {defineConfig} from 'sanity'
- import {portableTable} from '@bitfo/sanity-plugin-portable-table'
+import {defineConfig} from 'sanity'
+import {portableTable} from '@bitfo/sanity-plugin-portable-table'
 
- export const defineConfig({
-     ...
-     plugins: [
-         portableTable({
-            cellSchema: {
-                name: 'my-block',
-                type: 'block',
-                styles: [],
-                lists: [],
-                marks: {decorators: [{title: 'Strong', value: 'strong'}], annotations: []},
-            }
-         })
-     ]
- })
+export const defineConfig({
+  ...
+  plugins: [
+    portableTable({
+      cellSchema: {
+        name: "my-block",
+        type: "block",
+        styles: [],
+        lists: [],
+        marks: {
+          decorators: [{ title: "Strong", value: "strong" }],
+          annotations: [],
+        },
+      },
+    }),
+  ]
+})
 ```
 
 ## License
