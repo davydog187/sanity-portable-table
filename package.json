@@ -1,11 +1,8 @@
 {
   "name": "@bitfo/sanity-plugin-portable-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A table plugin for Sanity that supports PortableText cells",
-  "keywords": [
-    "sanity",
-    "table"
-  ],
+  "keywords": ["sanity", "table"],
   "homepage": "https://github.com/bitfo/sanity-portable-table#readme",
   "bugs": {
     "url": "https://github.com/bitfo/sanity-portable-table/issues"
@@ -33,12 +30,7 @@
   "directories": {
     "lib": "lib"
   },
-  "files": [
-    "src",
-    "lib",
-    "v2-incompatible.js",
-    "sanity.json"
-  ],
+  "files": ["src", "lib", "v2-incompatible.js", "sanity.json"],
   "scripts": {
     "prebuild": "npm run clean && plugin-kit verify-package --silent && pkg-utils",
     "build": "pkg-utils build",

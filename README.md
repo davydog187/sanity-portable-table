@@ -28,6 +28,13 @@ export const defineConfig({
   ...
   plugins: [
     portableTable({
+      // Optional: default name is "table"
+      name: "my-table",
+
+      // Optional: default title is "Table"
+      title: "Portable Table",
+
+      // Required: must provide a block definition
       cellSchema: {
         name: "my-block",
         type: "block",
