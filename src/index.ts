@@ -62,8 +62,8 @@ export const portableTable = definePlugin<TableConfig>((schema) => {
           ],
         },
         {
-          name: 'table',
-          title: 'Dave Table',
+          name: schema.name ?? 'table',
+          title: schema.title ?? 'Table',
           type: 'object',
           components: {
             preview: TablePreview,

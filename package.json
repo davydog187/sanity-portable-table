@@ -1,6 +1,6 @@
 {
   "name": "@bitfo/sanity-plugin-portable-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A table plugin for Sanity that supports PortableText cells",
   "keywords": [
     "sanity",

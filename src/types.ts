@@ -4,6 +4,8 @@ import {PortableTextBlock} from 'sanity'
 
 export interface TableConfig {
   cellSchema: BlockDefinition
+  name?: string
+  title?: string
 }
 
 export type Cell = {
