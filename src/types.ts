@@ -1,6 +1,4 @@
-import {BlockDefinition} from 'sanity'
-
-import {PortableTextBlock} from 'sanity'
+import {PortableTextBlock, BlockDefinition} from 'sanity'
 
 export interface TableConfig {
   cellSchema: BlockDefinition
