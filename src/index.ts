@@ -16,11 +16,13 @@ export const portableTable = definePlugin<TableConfig>((schema) => {
     schema: {
       types: [
         {
+          title: 'Table Cell Body',
           name: 'table-cell-body',
           type: 'array',
           of: [portableTextSchema],
         },
         {
+          title: 'Table Cell',
           name: 'table-cell',
           type: 'object',
           preview: {
@@ -39,6 +41,7 @@ export const portableTable = definePlugin<TableConfig>((schema) => {
           ],
         },
         {
+          title: 'Table Row',
           name: 'table-row',
           type: 'object',
           preview: {
