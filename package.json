@@ -57,7 +57,7 @@
     "@sanity/incompatible-plugin": "^1.0.4",
     "@sanity/ui": "^1.2.2",
     "react": "^18.2.0",
-    "sanity": "^3.2.6"
+    "sanity": "^3.20.0"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^2.2.3",
