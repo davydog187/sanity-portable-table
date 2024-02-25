@@ -132,6 +132,8 @@ export function TableInput(props: ObjectInputProps & TableConfig) {
           renderField={props.renderField}
           renderItem={props.renderItem}
           renderPreview={props.renderPreview}
+          renderBlock={props.renderBlock}
+          renderAnnotation={props.renderAnnotation}
         />
       )}
     </Stack>
